@@ -30,7 +30,9 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
 
   return (
     <main
-      className={`${theme} bg-dark text-white h-screen sm:snap-y sm:snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-light/20 scrollbar-thumb-primary/80 scroll-smooth relative`}
+      className={`${theme} ${
+        theme ? 'bg-primary' : 'bg-dark'
+      } text-white h-screen overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-light/20 scrollbar-thumb-primary/80 scroll-smooth relative`}
     >
       <Head>
         <title>YDs Portfolio</title>
@@ -59,27 +61,27 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
 
       <Header socials={socials} toggleTheme={toggleTheme} theme={actualTheme} />
 
-      <section id="hero" className="snap-center dark:bg-primary">
+      <section id="hero" className="dark:bg-primary">
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section id="about" className="snap-center dark:bg-primary">
+      <section id="about" className="dark:bg-primary">
         <About pageInfo={pageInfo} />
       </section>
 
-      {/* <section id="experience" className="snap-center">
+      {/* <section id="experience" className="">
         <Experience experiences={experiences} />
       </section> */}
 
-      <section id="skills" className="snap-start dark:bg-primary">
+      <section id="skills" className="dark:bg-primary">
         <Skills skills={skills} />
       </section>
 
-      <section id="projects" className="snap-start dark:bg-primary">
+      <section id="projects" className="dark:bg-primary">
         <Projects projects={projects} />
       </section>
 
-      <section id="contact" className="snap-start dark:bg-primary">
+      <section id="contact" className="dark:bg-primary">
         <ContactMe pageInfo={pageInfo} />
       </section>
 
