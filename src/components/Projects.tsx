@@ -74,9 +74,9 @@ export default function Projects({ projects }: Props) {
                 ))}
               </div>
 
-              <p className="text-base text-center sm:text-lg md:text-left">
-                {project.summary}
-              </p>
+              <div className="flex flex-wrap text-base text-center sm:text-lg md:text-left">
+                <p>{project.summary}</p>
+              </div>
 
               <div className="flex items-center justify-center pt-4">
                 <motion.div
