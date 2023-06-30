@@ -46,7 +46,7 @@ export default function ContactMe({ pageInfo }: Props) {
       </h3>
 
       <div className="flex flex-col items-center space-y-8 mt-20">
-        <h4 className="text-xl w-80 font-semibold text-center sm:text-4xl sm:w-full">
+        <h4 className="text-xl w-80 font-semibold text-center mt-20 sm:text-2xl sm:w-full md:text-4xl">
           I got just what you need.{' '}
           <span className="decoration-primary/50 underline dark:decoration-dark/50">
             Lets Talk.

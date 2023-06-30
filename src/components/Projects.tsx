@@ -37,7 +37,7 @@ export default function Projects({ projects }: Props) {
               <Image
                 src={urlFor(project?.image).url()}
                 alt={`Project ${project?.title}`}
-                className="h-40 w-60 md:h-64 md:w-96 object-cover"
+                className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-64 min-[800px]:w-96 object-cover"
                 sizes="(min-width: 768px) 384px, 240px"
                 width={240}
                 height={160}
