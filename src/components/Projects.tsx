@@ -34,15 +34,15 @@ export default function Projects({ projects }: Props) {
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
             >
-              {/* <Image
+              <Image
                 src={urlFor(project?.image).url()}
                 alt={`Project ${project?.title}`}
                 className="h-40 w-60 md:h-64 md:w-96 object-cover"
                 sizes="(min-width: 768px) 384px, 240px"
                 width={240}
                 height={160}
-              /> */}
-              <video
+              />
+              {/* <video
                 width="384"
                 autoPlay
                 loop
@@ -50,7 +50,7 @@ export default function Projects({ projects }: Props) {
                 className="h-48 w-60 md:h-80 md:w-96 object-cover border border-primary dark:border-none"
               >
                 <source src="coming-soon.mp4" type="video/mp4" />
-              </video>
+              </video> */}
             </motion.div>
 
             <div className="max-w-6xl space-y-2 px-0 md:px-10">
