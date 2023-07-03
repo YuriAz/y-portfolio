@@ -37,8 +37,8 @@ export default function Projects({ projects }: Props) {
               <Image
                 src={urlFor(project?.image).url()}
                 alt={`Project ${project?.title}`}
-                className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-64 min-[800px]:w-96 object-cover"
-                sizes="(min-width: 768px) 384px, 240px"
+                className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-72 min-[800px]:w-[32rem] rounded-sm md:object-cover"
+                sizes="(min-width: 1280px) 500px,(min-width: 768px) 384px, 240px, (min-width: 640px) 224px, 128px"
                 width={240}
                 height={160}
               />
@@ -88,8 +88,8 @@ export default function Projects({ projects }: Props) {
                 >
                   <Link
                     className="p-3 bg-primary rounded-md text-black text-lg font-bold dark:bg-dark dark:text-primary"
-                    href="#" //{project.linkToBuild}
-                    // target="_blank"
+                    href={project.linkToBuild}
+                    target="_blank"
                   >
                     Live Demo
                   </Link>
