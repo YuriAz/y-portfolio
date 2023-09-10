@@ -73,9 +73,9 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
         <Experience experiences={experiences} />
       </section> */}
 
-      <section id="skills" className="dark:bg-primary">
+      {/* <section id="skills" className="dark:bg-primary">
         <Skills skills={skills} />
-      </section>
+    </section> */}
 
       <section id="projects" className="dark:bg-primary">
         <Projects projects={projects} />

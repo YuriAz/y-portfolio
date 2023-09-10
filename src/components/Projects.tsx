@@ -55,7 +55,7 @@ export default function Projects({ projects }: Props) {
 
             <div className="max-w-6xl space-y-2 px-0 md:px-10">
               <h4 className="text-2xl font-semibold text-center sm:text-4xl">
-                {/* Case Study {index + 1} of {projects.length}: */}
+                Case {index + 1} of {projects.length}:{' '}
                 <span className="underline decoration-2 decoration-primary/50">
                   {project?.title}
                 </span>{' '}
