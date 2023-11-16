@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  h1:before {
+    content: attr(refl-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateX(180deg);
+    line-height: 65px;
+    transform-origin: bottom;
+    background: linear-gradient(to top, #fff, transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.4;
+  }
+
+  .layer {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 100%;
+    height: 100vh;
+    background: #111111;
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .layer.layer1 {
+    background: #111111;
+    transform: skewX(-45deg) translateX(0);
+    z-index: 1;
+  }
+
+  .layer.layer2 {
+    background: #151515;
+    transform: skewX(-45deg) translateX(-100px);
+    z-index: 3;
+  }
+
+  .layer.layer3 {
+    background: #131313;
+    transform: skewX(-45deg) translateX(-200px);
+    z-index: 5;
+  }
+
+  .layer.layer4 {
+    background: #191919;
+    transform: skewX(-45deg) translateX(-300px);
+    z-index: 10;
+  }
+
+  .layer.layer5 {
+    background: #131313;
+    transform: skewX(45deg) translateX(0px);
+    z-index: 2;
+  }
+
+  .layer.layer6 {
+    background: #111111;
+    transform: skewX(45deg) translateX(-100px);
+    z-index: 4;
+  }
+
+  .layer.layer7 {
+    background: #151515;
+    transform: skewX(45deg) translateX(-200px);
+    z-index: 6;
+  }
+
+  .layer.layer8 {
+    background: #191919;
+    transform: skewX(45deg) translateX(-300px);
+    z-index: 8;
+  }
+
+  .layer.layer9 {
+    background: transparent;
+    transform: skewX(45deg) translateX(-300px);
+    z-index: 10;
+  }
+
+  .skill-shadow {
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer components {
+  .container {
+    @apply text-white w-full h-screen p-20;
+  }
+
+  .contact-input {
+    @apply outline-none border border-zinc-700 focus:border focus:border-white;
+  }
+}
+
+@font-face {
+  font-family: batman;
+  src: url(../../public/fonts/batmfa__.ttf);
+}
+
+.font-batman {
+  font-family: batman;
+}
