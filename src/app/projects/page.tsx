@@ -13,7 +13,7 @@ import { randomUUID } from 'crypto'
 
 export default function page() {
   return (
-    <section className="container overflow-y-scroll">
+    <section className="container overflow-y-scroll scrollbar-none">
       <div className="w-full pb-20 space-y-3">
         <h2 className="text-4xl font-semibold font-batman">Projects</h2>
 
@@ -26,7 +26,7 @@ export default function page() {
             className="w-[370px] h-[450px] flex flex-col justify-between"
             key={randomUUID()}
           >
-            <div className="h-[74%]  rounded-md overflow-hidden">
+            <div className="h-[74%] border border-white rounded-md overflow-hidden">
               <Image
                 src={image}
                 alt="Project logo"
