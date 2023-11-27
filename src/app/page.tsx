@@ -5,7 +5,7 @@ import SkillHolder from '@/components/SkillHolder'
 
 export default function Home() {
   return (
-    <main className="container">
+    <main className="container scrollbar-none">
       <div className="h-full flex flex-col gap-32">
         <h1
           refl-text="Yuri Diogo"

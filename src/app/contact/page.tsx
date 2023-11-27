@@ -36,7 +36,7 @@ export default function page() {
   }
 
   return (
-    <section className="container space-y-10">
+    <section className="container space-y-10 scrollbar-none">
       <div className="pb-10 space-y-3">
         <h2 className="text-4xl font-semibold font-batman">Contact</h2>
 

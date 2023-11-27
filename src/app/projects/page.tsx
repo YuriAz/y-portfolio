@@ -21,12 +21,12 @@ export default function page() {
       </div>
 
       <div className="flex flex-wrap gap-5">
-        {projects?.map(({ image, title, url, code }) => (
+        {projects?.map(({ image, title, summary, url, code, isDisable }) => (
           <div
             className="w-[370px] h-[450px] flex flex-col justify-between"
             key={randomUUID()}
           >
-            <div className="h-[74%] border border-white rounded-md overflow-hidden">
+            <div className="relative h-[74%] border border-white rounded-md overflow-hidden">
               <Image
                 src={image}
                 alt="Project logo"
@@ -35,6 +35,10 @@ export default function page() {
                 height={734}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
+
+              <div className="absolute top-0 h-full text-justify p-8 bg-black/60 transition-all opacity-0 hover:opacity-100">
+                {summary}
+              </div>
             </div>
 
             <div className="h-[25%] flex flex-col gap-1 items-center">
@@ -48,7 +52,7 @@ export default function page() {
                   target="_blank"
                   className="p-3 px-7 rounded-md bg-white hover:bg-white/80 text-black"
                 >
-                  Demo
+                  <button disabled={isDisable}>Demo</button>
                 </Link>
 
                 <Link
