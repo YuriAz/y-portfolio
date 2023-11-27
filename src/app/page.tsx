@@ -5,22 +5,22 @@ import SkillHolder from '@/components/SkillHolder'
 
 export default function Home() {
   return (
-    <main className="container scrollbar-none">
-      <div className="h-full flex flex-col gap-32">
+    <main className="mobile-container scrollbar-none md:container">
+      <div className="h-full flex flex-col gap-10 md:gap-32">
         <h1
           refl-text="Yuri Diogo"
-          className="relative text-7xl font-bold font-batman"
+          className="relative text-4xl font-bold font-batman md:text-7xl"
         >
           Yuri Diogo
         </h1>
 
         <div className="flex flex-col gap-10">
-          <h2 className="text-4xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-white md:text-4xl">
             Frontend Developer
           </h2>
 
-          <div className="flex gap-4 text-lg font-medium">
-            <p className="w-[50%] p-2 text-justify">
+          <div className="flex-col gap-4 text-lg font-medium md:flex md:flex-row">
+            <p className="w-full p-2 text-base text-justify md:w-[50%] md:text-lg">
               I focus on specializing in frontend, creating beautiful and
               interactive interfaces for better customer satisfaction. One of my
               passions is build and improving my personal projects. I believe
@@ -28,9 +28,9 @@ export default function Home() {
               projects by yourself that solve your own problems.
             </p>
 
-            <div className="bg-white w-[0.10rem]"></div>
+            <div className="w-full h-[0.10rem] bg-white md:w-[0.10rem] md:h-full"></div>
 
-            <div className="w-[30%] p-2 space-y-5">
+            <div className="w-full p-2 space-y-5 md:w-[30%]">
               <p className="">Most used techs:</p>
 
               <div className="flex items-center">

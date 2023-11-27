@@ -13,17 +13,17 @@ import { randomUUID } from 'crypto'
 
 export default function page() {
   return (
-    <section className="container overflow-y-scroll scrollbar-none">
+    <section className="mobile-container overflow-y-scroll scrollbar-none md:container">
       <div className="w-full pb-20 space-y-3">
         <h2 className="text-4xl font-semibold font-batman">Projects</h2>
 
         <div className="h-1 w-44 bg-white"></div>
       </div>
 
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap gap-5 overflow-y-scroll">
         {projects?.map(({ image, title, summary, url, code, isDisable }) => (
           <div
-            className="w-[370px] h-[450px] flex flex-col justify-between"
+            className="flex flex-col justify-between mb-10 md:mb-0 md:w-[310px] md:h-[390px] lg:w-[370px] lg:h-[450px]"
             key={randomUUID()}
           >
             <div className="relative h-[74%] border border-white rounded-md overflow-hidden">

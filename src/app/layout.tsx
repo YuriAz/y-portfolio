@@ -25,7 +25,7 @@ export default function RootLayout({
         <div className="flex">
           <Navbar />
           <Background />
-          <div className="z-50">{children}</div>
+          <div className="z-40">{children}</div>
         </div>
       </body>
     </html>

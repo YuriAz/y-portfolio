@@ -137,6 +137,10 @@
     @apply text-white w-full h-screen p-20;
   }
 
+  .mobile-container {
+    @apply text-white w-full h-screen p-10;
+  }
+
   .contact-input {
     @apply outline-none border border-zinc-700 focus:border focus:border-white;
   }

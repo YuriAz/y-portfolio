@@ -36,14 +36,14 @@ export default function page() {
   }
 
   return (
-    <section className="container space-y-10 scrollbar-none">
+    <section className="mobile-container scrollbar-none md:space-y-10 md:container">
       <div className="pb-10 space-y-3">
         <h2 className="text-4xl font-semibold font-batman">Contact</h2>
 
         <div className="h-1 w-44 bg-white"></div>
       </div>
 
-      <div className="flex justify-evenly">
+      <div className="flex flex-col justify-evenly gap-2 mb-8 md:mb-0 md:gap-5 md:flex md:flex-row">
         <div className="flex items-center gap-3">
           <p className="text-2xl text-white">
             <FaPhone />
@@ -57,7 +57,7 @@ export default function page() {
             <MdEmail />
           </p>
 
-          <p>Email: yuri.diogo.az@gmail.com</p>
+          <p>yuri.diogo.az@gmail.com</p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -65,13 +65,17 @@ export default function page() {
             <FaLocationDot />
           </p>
 
-          <p>Address: RS / Brazil</p>
+          <p>RS / Brazil</p>
         </div>
       </div>
 
       <div>
-        <form onSubmit={sendEmail} target="reset" className="space-y-7">
-          <div className="flex gap-8">
+        <form
+          onSubmit={sendEmail}
+          target="reset"
+          className="space-y-3 md:space-y-7"
+        >
+          <div className="flex gap-2 md:gap-8">
             <input
               name="name"
               type="text"
