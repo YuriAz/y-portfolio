@@ -20,7 +20,7 @@ export default function page() {
         <div className="h-1 w-44 bg-white"></div>
       </div>
 
-      <div className="flex flex-wrap gap-5 overflow-y-scroll">
+      <div className="flex flex-wrap gap-5">
         {projects?.map(({ image, title, summary, url, code, isDisable }) => (
           <div
             className="flex flex-col justify-between mb-10 md:mb-0 md:w-[310px] md:h-[390px] lg:w-[370px] lg:h-[450px]"
