@@ -9,7 +9,7 @@ export default function MobileLinks() {
   const pathname = usePathname()
 
   return (
-    <div className="absolute bottom-10 flex mx-[25%] text-4xl px-4 py-1 gap-2 rounded-full bg-stone-700/40 text-white z-50 md:mx-[35%] md:bottom-20 md:px-7 md:py-3 md:gap-5">
+    <div className="absolute bottom-3 flex mx-[30%] text-2xl px-4 py-1 gap-2 rounded-full bg-stone-700/40 text-white z-50 md:mx-[35%] md:bottom-10 md:px-5 md:py-2 md:gap-5">
       <Link
         href="/"
         className={`${
