@@ -20,13 +20,14 @@ export default function Home() {
           </h2>
 
           <div className="flex-col gap-4 text-lg font-medium md:flex md:flex-row">
-            <p className="w-full p-2 text-base text-justify md:w-[50%] md:text-lg">
-              I focus on specializing in frontend, creating beautiful and
-              interactive interfaces for better customer satisfaction. One of my
-              passions is build and improving my personal projects. I believe
-              that the only way to really learn how to code something is doing
-              projects by yourself that solve your own problems.
-            </p>
+            <div className="w-full p-2 text-base text-justify md:w-[50%] md:text-lg">
+              <p>This is my hub. Be welcome!</p>
+
+              <p>
+                Here you will see beautiful and interactive interfaces that will meet customer satisfaction and joy.
+                Everything that is done with passion and patience will be seen with good eyes.
+              </p>
+            </div>
 
             <div className="w-full h-[0.10rem] bg-white md:w-[0.10rem] md:h-full"></div>
 

@@ -73,7 +73,7 @@ export default function page() {
         <form
           onSubmit={sendEmail}
           target="reset"
-          className="space-y-3 md:space-y-7"
+          className="space-y-3 md:space-y-5"
         >
           <div className="flex gap-2 md:gap-8">
             <input
