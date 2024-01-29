@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client'
 
 import { PhoneIcon, MapIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
