@@ -6,16 +6,15 @@ import Link from 'next/link'
 import { SocialIcon } from 'react-social-icons'
 import { AiFillHome } from 'react-icons/ai'
 import { motion } from 'framer-motion'
-import { Social } from '../../typings'
 import Switch from 'react-switch'
+import { socials } from '../constants/socials'
 
 type Props = {
-  socials: Social[]
   toggleTheme(): void
   theme: string
 }
 
-export default function Header({ socials, toggleTheme, theme }: Props) {
+export default function Header({ toggleTheme, theme }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-50 xl:items-center backdrop-blur-md sm:backdrop-blur-0">
       <motion.div
@@ -25,9 +24,9 @@ export default function Header({ socials, toggleTheme, theme }: Props) {
         className="flex flex-row items-center dark:space-x-1 ml-[-17px] sm:ml-0"
       >
         {socials?.map(social => (
-          <motion.div key={social?._id} whileHover={{ y: -10 }}>
+          <motion.div key={social.title} whileHover={{ y: -10 }}>
             <SocialIcon
-              url={social?.url}
+              url={social.url}
               network={
                 social?.url === 'https://wa.me/5551998667327' ? 'whatsapp' : ''
               }

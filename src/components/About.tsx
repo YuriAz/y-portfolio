@@ -4,14 +4,9 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { PageInfo } from '../../typings'
-import { urlFor } from '../../sanity'
+import me from '../../public/images/Me1.jpeg'
 
-type Props = {
-  pageInfo: PageInfo
-}
-
-export default function About({ pageInfo }: Props) {
+export default function About() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,7 +25,7 @@ export default function About({ pageInfo }: Props) {
         className="-mb-20 mt-20 flex-shrink-0 xl:pt-20 z-10"
       >
         <Image
-          src={urlFor(pageInfo?.profilePic).url()}
+          src={me}
           alt="me"
           className="rounded-full object-cover sm:w-56 sm:h-56 md:rounded-lg md:w-64 md:h-96 md:mb-32 xl:rounded-md xl:w-[500px] xl:h-[500px]"
           sizes="(min-width: 1280px) 500px,(min-width: 768px) 384px, (min-width: 640px) 224px, 128px"
@@ -53,7 +48,12 @@ export default function About({ pageInfo }: Props) {
         </h4>
 
         <p className="text-base sm:text-lg">
-          {pageInfo?.backgroundInformation}
+          Yooo, I'm Yuri Diogo and I'm a developer. Coding taught me to be more
+          creative, focused and comprehensible. I like to invest my time
+          learning new things about programming and how I can apply it to real
+          projects, and I believe that the only way to really learn is building
+          real projects. Come and take a look at some of my work and enjoy your
+          time.
         </p>
       </motion.div>
 

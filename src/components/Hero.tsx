@@ -5,14 +5,9 @@
 import Image from 'next/image'
 import BackgroundCircles from './BackgroundCircles'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
-import { PageInfo } from '../../typings'
-import { urlFor } from '../../sanity'
+import logo from '../../public/images/logo.png'
 
-type Props = {
-  pageInfo: PageInfo
-}
-
-export default function Hero({ pageInfo }: Props) {
+export default function Hero() {
   const [text, count] = useTypewriter({
     words: [
       `Hi, The Name's Yuri Diogo`,
@@ -29,7 +24,7 @@ export default function Hero({ pageInfo }: Props) {
 
       <Image
         className="relative rounded-full h-60 w-60 mx-auto object-cover"
-        src={urlFor(pageInfo?.heroImage).url()}
+        src={logo}
         alt="logo"
         width={240}
         height={240}
@@ -49,12 +44,6 @@ export default function Hero({ pageInfo }: Props) {
           <a href="#about">
             <button className="heroButton">About</button>
           </a>
-          {/* <a href="#experience">
-            <button className="heroButton">Experience</button>
-          </a> */}
-          {/* <a href="#skills">
-            <button className="heroButton">Skills</button>
-          </a> */}
           <a href="#projects">
             <button className="heroButton">Projects</button>
           </a>

@@ -5,14 +5,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Project } from '../../typings'
-import { urlFor } from '../../sanity'
+import { projects } from '../constants/projects'
 
-type Props = {
-  projects: Project[]
-}
-
-export default function Projects({ projects }: Props) {
+export default function Projects() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,9 +20,9 @@ export default function Projects({ projects }: Props) {
       </h3>
 
       <div className="w-full relative flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-40 scrollbar-thin scrollbar-track-basic/20 scrollbar-thumb-primary/80 dark:scrollbar-track-basic/5 dark:scrollbar-thumb-dark/80">
-        {projects?.map((project, index) => (
+        {projects?.map(project => (
           <div
-            key={project?._id}
+            key={project.title}
             className="w-screen h-screen mt-12 p-2 flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center sm:mt-24 sm:p-20 md:p-44 dark:text-dark"
           >
             <motion.div
@@ -37,8 +32,8 @@ export default function Projects({ projects }: Props) {
               viewport={{ once: true }}
             >
               <Image
-                src={urlFor(project?.image).url()}
-                alt={`Project ${project?.title}`}
+                src={project.image}
+                alt={`Project ${project.title}`}
                 className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-72 min-[800px]:w-[32rem] rounded-sm md:object-cover"
                 sizes="(min-width: 1280px) 500px,(min-width: 768px) 384px, 240px, (min-width: 640px) 224px, 128px"
                 width={240}
@@ -57,17 +52,16 @@ export default function Projects({ projects }: Props) {
 
             <div className="max-w-6xl space-y-2 px-0 md:px-10">
               <h4 className="text-2xl font-semibold text-center sm:text-4xl">
-                Case {index + 1} of {projects.length}:{' '}
                 <span className="underline decoration-2 decoration-primary/50">
-                  {project?.title}
-                </span>{' '}
+                  {project.title}
+                </span>
               </h4>
 
               <div className="flex items-center justify-center space-x-2 py-1">
-                {project?.technologies?.map(technology => (
+                {project.technologies.map(technology => (
                   <Image
-                    key={technology?._id}
-                    src={urlFor(technology?.image).url()}
+                    key={technology.title}
+                    src={technology.image}
                     alt=""
                     className="w-10 h-10"
                     width={40}
@@ -90,7 +84,7 @@ export default function Projects({ projects }: Props) {
                 >
                   <Link
                     className="p-3 bg-primary rounded-md text-black text-lg font-bold dark:bg-dark dark:text-primary"
-                    href={project.linkToBuild}
+                    href={project.url}
                     target="_blank"
                   >
                     Live Demo

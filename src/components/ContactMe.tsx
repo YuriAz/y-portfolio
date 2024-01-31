@@ -58,17 +58,17 @@ export default function ContactMe({ pageInfo }: Props) {
         <div className="space-y-4">
           <div className="flex items-center justify-center space-x-5">
             <PhoneIcon className="text-primary h-5 w-5 animate-pulse sm:h-7 sm:w-7" />
-            <p className="text-lg sm:text-2xl">{pageInfo?.phoneNumber}</p>
+            <p className="text-lg sm:text-2xl">+55(51)99866-7327</p>
           </div>
 
           <div className="flex items-center justify-center space-x-5">
             <EnvelopeIcon className="text-primary h-5 w-5 animate-pulse sm:h-7 sm:w-7" />
-            <p className="text-lg sm:text-2xl">{pageInfo?.email}</p>
+            <p className="text-lg sm:text-2xl">yuri.diogo.az@gmail.com</p>
           </div>
 
           <div className="flex items-center justify-center space-x-5">
             <MapIcon className="text-primary h-5 w-5 animate-pulse sm:h-7 sm:w-7" />
-            <p className="text-lg sm:text-2xl">{pageInfo?.address}</p>
+            <p className="text-lg sm:text-2xl">RS / Brazil</p>
           </div>
         </div>
 

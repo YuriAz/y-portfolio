@@ -3,29 +3,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { GetStaticProps } from 'next'
 import { useState } from 'react'
 import About from '@/components/About'
 import ContactMe from '@/components/ContactMe'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
-import { PageInfo, Project, Skill, Social } from '../../typings'
-import { fetchPageInfo } from '../../utils/fetchPageInfo'
-import { fetchSkills } from '../../utils/fetchSkills'
-import { fetchProjects } from '../../utils/fetchProjects'
-import { fetchSocials } from '../../utils/fetchSocials'
-import { urlFor } from '../../sanity'
+import logo from '../../public/images/logo.png'
 
-type Props = {
-  pageInfo: PageInfo
-  skills: Skill[]
-  projects: Project[]
-  socials: Social[]
-}
-
-export default function Home({ pageInfo, skills, projects, socials }: Props) {
+export default function Home() {
   const [theme, setTheme] = useState('')
   const toggleTheme = () => setTheme(theme === '' ? 'dark' : '')
   let actualTheme = theme
@@ -61,36 +47,28 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
 
-      <Header socials={socials} toggleTheme={toggleTheme} theme={actualTheme} />
+      <Header toggleTheme={toggleTheme} theme={actualTheme} />
 
       <section id="hero" className="dark:bg-primary">
-        <Hero pageInfo={pageInfo} />
+        <Hero />
       </section>
 
       <section id="about" className="dark:bg-primary">
-        <About pageInfo={pageInfo} />
+        <About />
       </section>
 
-      {/* <section id="experience" className="">
-        <Experience experiences={experiences} />
-      </section> */}
-
-      {/* <section id="skills" className="dark:bg-primary">
-        <Skills skills={skills} />
-    </section> */}
-
       <section id="projects" className="dark:bg-primary">
-        <Projects projects={projects} />
+        <Projects />
       </section>
 
       <section id="contact" className="dark:bg-primary">
-        <ContactMe pageInfo={pageInfo} />
+        <ContactMe />
       </section>
 
       <footer className="hidden sm:flex items-center justify-center sticky bottom-4 z-50">
         <Link href="#hero">
           <Image
-            src={urlFor(pageInfo?.heroImage).url()}
+            src={logo}
             alt="logo"
             className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             width={40}
@@ -100,20 +78,4 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
       </footer>
     </main>
   )
-}
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo()
-  const skills: Skill[] = await fetchSkills()
-  const projects: Project[] = await fetchProjects()
-  const socials: Social[] = await fetchSocials()
-
-  return {
-    props: {
-      pageInfo,
-      skills,
-      projects,
-      socials
-    }
-  }
 }
