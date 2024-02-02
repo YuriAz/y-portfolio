@@ -35,7 +35,7 @@ export default function Projects() {
                 src={project.image}
                 alt={`Project ${project.title}`}
                 className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-72 min-[800px]:w-[32rem] rounded-sm md:object-cover"
-                sizes="(min-width: 1280px) 500px,(min-width: 768px) 384px, 240px, (min-width: 640px) 224px, 128px"
+                sizes="(min-width: 1280px) 1280px,(min-width: 768px) 384px, 240px, (min-width: 640px) 224px, 128px"
                 width={240}
                 height={160}
               />
