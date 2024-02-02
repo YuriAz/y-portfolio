@@ -6,6 +6,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { projects } from '../constants/projects'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 export default function Projects() {
   return (
@@ -20,26 +26,34 @@ export default function Projects() {
       </h3>
 
       <div className="w-full relative flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-40 scrollbar-thin scrollbar-track-basic/20 scrollbar-thumb-primary/80 dark:scrollbar-track-basic/5 dark:scrollbar-thumb-dark/80">
-        {projects?.map(project => (
-          <div
-            key={project.title}
-            className="w-screen h-screen mt-12 p-2 flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center sm:mt-24 sm:p-20 md:p-44 dark:text-dark"
-          >
-            <motion.div
-              initial={{ y: -300, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src={project.image}
-                alt={`Project ${project.title}`}
-                className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-72 min-[800px]:w-[32rem] rounded-sm md:object-cover"
-                sizes="(min-width: 1280px) 1280px,(min-width: 768px) 384px, 240px, (min-width: 640px) 224px, 128px"
-                width={240}
-                height={160}
-              />
-              {/* <video
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar]}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          navigation
+        >
+          {projects?.map(project => (
+            <SwiperSlide>
+              <div
+                key={project.title}
+                className="w-screen h-screen mt-12 p-2 flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center sm:mt-24 sm:p-20 md:p-44 dark:text-dark"
+              >
+                <motion.div
+                  initial={{ y: -300, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`Project ${project.title}`}
+                    className="h-40 w-60 min-[766px]:h-40 min-[766px]:mt-10 min-[800px]:h-72 min-[800px]:w-[32rem] rounded-sm md:object-cover"
+                    sizes="(min-width: 1280px) 1280px,(min-width: 768px) 384px, 240px, (min-width: 640px) 224px, 128px"
+                    width={240}
+                    height={160}
+                  />
+                  {/* <video
                 width="384"
                 autoPlay
                 loop
@@ -48,52 +62,58 @@ export default function Projects() {
               >
                 <source src="coming-soon.mp4" type="video/mp4" />
               </video> */}
-            </motion.div>
-
-            <div className="max-w-6xl space-y-2 px-0 md:px-10">
-              <h4 className="text-2xl font-semibold text-center sm:text-4xl">
-                <span className="underline decoration-2 decoration-primary/50">
-                  {project.title}
-                </span>
-              </h4>
-
-              <div className="flex items-center justify-center space-x-2 py-1">
-                {project.technologies.map(technology => (
-                  <Image
-                    key={technology.title}
-                    src={technology.image}
-                    alt=""
-                    className="w-10 h-10"
-                    width={40}
-                    height={40}
-                  />
-                ))}
-              </div>
-
-              <div className="flex flex-wrap text-base text-center sm:text-lg md:text-left">
-                <p className="text-center overflow-x-hidden">
-                  {project.summary}
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center pt-4">
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                >
-                  <Link
-                    className="p-3 bg-primary rounded-md text-black text-lg font-bold dark:bg-dark dark:text-primary"
-                    href={project.url}
-                    target="_blank"
-                  >
-                    Live Demo
-                  </Link>
                 </motion.div>
+
+                <div className="max-w-6xl space-y-2 px-0 md:px-10">
+                  <h4 className="text-2xl font-semibold text-center sm:text-4xl">
+                    <span className="underline decoration-2 decoration-primary/50">
+                      {project.title}
+                    </span>
+                  </h4>
+
+                  <div className="flex items-center justify-center space-x-2 py-1">
+                    {project.technologies.map(technology => (
+                      <Image
+                        key={technology.title}
+                        src={technology.image}
+                        alt=""
+                        className="w-10 h-10"
+                        width={40}
+                        height={40}
+                      />
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap text-base text-center sm:text-lg md:text-left">
+                    <p className="text-center overflow-x-hidden">
+                      {project.summary}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-center pt-4">
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 17
+                      }}
+                    >
+                      <Link
+                        className="p-3 bg-primary rounded-md text-black text-lg font-bold dark:bg-dark dark:text-primary"
+                        href={project.url}
+                        target="_blank"
+                      >
+                        Live Demo
+                      </Link>
+                    </motion.div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div className="w-full h-[300px] absolute left-0 top-[36%] bg-primary/10 -skew-y-[10deg] dark:bg-dark/60" />
