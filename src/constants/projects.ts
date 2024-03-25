@@ -1,17 +1,28 @@
-import springJwt from '../../public/skills/spring-jwt.png'
-import nextPortfolio from '../../public/images/next-portfolio.png'
+import springJwt from '../../public/skills/spring-jwt.png';
+import nextPortfolio from '../../public/images/next-portfolio.png';
+import fastDaft from '../../public/images/fast-draft.jpg';
 import {
   nextjs,
   react,
+  typescript,
   tailwind,
   java,
   spring,
   springsec,
   jwt,
   postgresql
-} from './skills'
+} from './skills';
 
 export const projects = [
+  {
+    title: 'Wild Rift Fast Draft',
+    image: fastDaft,
+    summary: `      
+      Fast Draft offers only relevant information for a quick and effective "draft" (champions selection in a ranked game) in the game League of Legends - Wild Rift. When clicking on a champion's card, a modal is opened, displaying information such as Strong vs, Weak vs, and Synergy. All information has been obtained from official League of Legends websites. No more suffering in your Drafts!
+    `,
+    technologies: [nextjs, react, typescript, tailwind],
+    url: 'https://wr-fast-draft.vercel.app/'
+  },
   {
     title: 'Next Portfolio',
     image: nextPortfolio,
@@ -28,4 +39,4 @@ export const projects = [
     technologies: [java, spring, springsec, jwt, postgresql],
     url: 'https://github.com/YuriAz/spring-jwt-authentication'
   }
-]
+];
